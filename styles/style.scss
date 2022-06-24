@@ -1,0 +1,18 @@
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    table {
+        tr {
+            height: 60px;
+            td, th {
+                text-align: center;
+                line-height: 60px;
+            }
+        }
+    }
+    div {
+        width: 40vw;
+        height: 40vw;
+    }
+}

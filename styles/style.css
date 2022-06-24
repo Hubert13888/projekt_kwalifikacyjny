@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body table tr {
+  height: 60px;
+}
+body table tr td, body table tr th {
+  text-align: center;
+  line-height: 60px;
+}
+body div {
+  width: 40vw;
+  height: 40vw;
+}/*# sourceMappingURL=style.css.map */
