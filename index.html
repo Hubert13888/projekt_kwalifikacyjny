@@ -1,37 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Zadanie kwalifikacyjne</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts-js/errors.js"></script>
+    <script src="scripts-js/table.js"></script>
+    <script src="scripts-js/chart.js"></script>
     <script src="scripts-js/index.js"></script>
 
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div><canvas id="dataChart"></canvas></div>
-    
-    <table onload='generatePlaceholder(10)' class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Lp.</th>            
-                <th scope="col">Zdjęcie profilowe</th>
-                <th scope="col">Imię</th>
-                <th scope="col">Nazwisko</th>
-                <th scope="col">Wiek</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Telefon</th>
-                <th scope="col">Miasto</th>
-                <th scope="col">Stan</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <button class="btn btn-light" onclick='onclickDownloadContent({results: 1000, nat: "fr", gender: "male"})'>Pobierz dane</button>
+    <div class="container_h">
+        <p class="main_p">Aplikacja ta służy do wyświetlania statystyk o tysiącu losowych mężczyznach pochodzących z <a href="https://randomuser.me/" target="_blank">RandomUser API</a>. Mają one postać wykresu, pokazującego przedziały wiekowe tych osób oraz tabeli z danymi o dziesięciu najstarszych z nich. Projekt ten został wykonany przy użyciu języka <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>. Wykres sporządzono przy użyciu biblioteki <a href="https://www.chartjs.org/" target="_blank">Chart.js</a>, a szatę graficzną oparto o <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> i <a href="https://sass-lang.com/" target="_blank">SASS</a>.
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim id eveniet aperiam voluptas? Odio sit quia perspiciatis sed, eaque omnis dicta nisi nihil nobis obcaecati adipisci enim, numquam laborum fugit.
+        Dolore consequuntur illo reiciendis iure reprehenderit praesentium vero quis facere ipsam amet, ducimus fugit distinctio nam laborum dolorum nemo suscipit? Consequatur aut molestias dolore quaerat, vero ullam asperiores magni commodi?
+        Aliquid voluptatum saepe recusandae, minus modi consectetur voluptates repellendus, labore molestias quos debitis minima fugiat itaque quae enim, ad est sed dolorem placeat id dolor nemo eveniet ratione vero. Consectetur.
+        Expedita tempore vitae eveniet necessitatibus error labore enim reiciendis facilis, ea excepturi et suscipit obcaecati adipisci dolores cum quidem repellat! Unde aliquid maiores eligendi architecto iste odio, explicabo libero nulla?
+        </p>
+        
+        <p>Ducimus cupiditate pariatur, provident perspiciatis voluptatem, nam consectetur quasi, in harum odit omnis ipsam minima eveniet? Deleniti molestiae doloribus facere at ad, quo nihil, suscipit aspernatur laboriosam optio quibusdam magni?
+        Voluptatum praesentium dicta perspiciatis adipisci velit illo beatae magnam, veniam eveniet, ipsam odit saepe tempora optio blanditiis nisi libero eaque nesciunt inventore animi error! Accusamus, mollitia! Exercitationem quidem fugiat praesentium!
+        Asperiores, nihil. Vitae accusamus ipsa fuga commodi vel quia incidunt impedit, pariatur quisquam nemo maxime dolore similique velit ab accusantium suscipit laudantium voluptatem placeat itaque! Saepe reprehenderit repudiandae eum quidem.
+        Iste mollitia maxime deleniti qui facere commodi, dignissimos nulla quisquam possimus laboriosam error doloremque suscipit aut a distinctio? Labore quidem perferendis consequatur culpa, quae a odit explicabo? Iure, repudiandae neque.
+        Harum, quod maxime commodi temporibus quas totam earum illum assumenda obcaecati et minus. Soluta possimus eveniet odit exercitationem quos, incidunt repudiandae odio nobis id quo! Assumenda nisi quaerat necessitatibus ab!</p>
+        
+        <div class="placeholder_h">
+            <div class="canvas_wrapper">
+                <canvas class="data_chart"></canvas>
+                <div class="chart_spinner">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive table_wrapper">
+                <table onload='generatePlaceholder(10)' class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Lp.</th>            
+                            <th scope="col">Zdjęcie profilowe</th>
+                            <th scope="col">Imię</th>
+                            <th scope="col">Nazwisko</th>
+                            <th scope="col">Wiek</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Telefon</th>
+                            <th scope="col">Miasto</th>
+                            <th scope="col">Stan</th>
+                        </tr>
+                    </thead>
+                    <tbody><!-- Table content is genereted with Typescript --></tbody>
+                </table>
+                <div class="table_spinner">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <p class="bcg">This is the story of a man named Stanley. Stanley worked for a company in a big building where he was Employee #427. Employee #427's job was simple: he sat at his desk in Room 427 and he pushed buttons on a keyboard. Orders came to him through a monitor on his desk telling him what buttons to push, how long to push them, and in what order. This is what Employee #427 did every day of every month of every year, and although others may have considered it soul rending, Stanley relished every moment that the orders came in, as though he had been made exactly for this job. And Stanley was happy.</p>
+        <p class="bcg">And then one day, something very peculiar happened. Something that would forever change Stanley; Something he would never quite forget. He had been at his desk for nearly an hour when he had realized not one single order had arrived on the monitor for him to follow. No one had shown up to give him instructions, call a meeting, or even say 'hi'. Never in all his years at the company had this happened, this complete isolation. Something was very clearly wrong. Shocked, frozen solid, Stanley found himself unable to move for the longest time. But as he came to his wits and regained his senses, he got up from his desk and stepped out of his office. </p>
+        <p class="bcg">The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never The End Is Never</p>
+    </div>
+    <button class="button" onclick='onclickDownloadContent({results: 1000, nat: "fr", gender: "male"})'>
+        <i class="bi bi-arrow-repeat refresh_icon"></i>
+    </button>
 </body>
 </html>
